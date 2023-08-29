@@ -25,9 +25,9 @@ var credencial = {
 
   };
   
-  // Uso de los métodos y propiedades
+  
   console.log(credencial.nombre);             
   console.log(credencial.esMayorDeEdad());    
   console.log(credencial.mensajeBienvenida()); 
-  console.log(credencial.obtenerResumen());  
+  console.log("Credencial", credencial.obtenerResumen());  
   
