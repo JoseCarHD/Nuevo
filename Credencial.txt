@@ -1,0 +1,28 @@
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDkKsnSFyfUnyHEAV6lWX5pg2iP2QL9dEQ",
+  authDomain: "xsmile-c5018.firebaseapp.com",
+  projectId: "xsmile-c5018",
+  storageBucket: "xsmile-c5018.appspot.com",
+  messagingSenderId: "933820524542",
+  appId: "1:933820524542:web:c74fa3236bef1e90db02af"
+};
+
+
+
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+
+Instalar firebase 
+
+npm install firebase
+
+
+
+npm install -g firebase-tools
