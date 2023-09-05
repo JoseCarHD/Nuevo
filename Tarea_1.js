@@ -25,7 +25,7 @@ var credencial = {
 
   };
   
-  
+      
   console.log(credencial.nombre);             
   console.log(credencial.esMayorDeEdad());    
   console.log(credencial.mensajeBienvenida()); 

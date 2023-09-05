@@ -11,18 +11,13 @@ const firebaseConfig = {
 
 
 
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
 
 
 Instalar firebase 
 
 npm install firebase
-
 
 
 npm install -g firebase-tools
