@@ -5,7 +5,8 @@ const boddyParser = require('body-parser');
 const path = require('path');
 
 const indexRoutes = require('./routers/index.js');  //referencia a las rutas 
-const {default: mongoose} = require('mongoose')
+const {default: mongoose} = require('mongoose');
+const datos = require('./models/datos.js');
 
 app.set('port', process.env.PORT || 3000 ); //asigno puerto 3000
 
