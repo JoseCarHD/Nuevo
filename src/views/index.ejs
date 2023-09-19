@@ -7,84 +7,96 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container">
-    <!-- Comienza el form -->
-    <div class="col-4">
-      <div class="card">
-        <div class="card-body">
-          <form action="/add" method="POST">
-            <div class="form-group">
-              <input type="text" id="Nombre" name="Nombre" placeholder="Nombre" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="text" id="Apellido_Paterno" name="Apellido_Paterno" placeholder="Apellido Paterno" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="text" id="Apellido_Materno" name="Apellido_Materno" placeholder="Apellido Materno" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="text" id="Fecha_Nac" name="Fecha_Nac" placeholder="Fecha de nacimiento" class="form-control">
-            </div>
-            <button class="btn btn-primary">Registrar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Comienza tabla -->
-    <div class="col-md-5">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Apellido Paterno</th>
-            <th>Apellido Materno</th>
-            <th>Fecha de nacimiento</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(var i = 0; i < datos.length; i++){  %>
-            <tr>
-              <td><%= i+1  %></td>
-              <td><%= datos[i].Nombre %></td>
-              <td><%= datos[i].Apellido_Paterno %></td>
-              <td><%= datos[i].Apellido_Materno %></td>
-              <td><%= datos[i].Fecha_Nac %></td>
-              <td>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal<%= i %>">
-                  Eliminar
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="Modal<%= i %>" tabindex="-1" role="dialog" aria-labelledby="modal-label<%= i %>" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="modal-label<%= i %>">Confirmar Eliminación</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        ¿Estás seguro de que deseas eliminar este registro?
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" href="/del/<%= datos[i].id %>">Eliminar</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          <% } %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="container">
+    <!-- comienza form-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="container">
+        
+        <div class="col-4">
+           <div class="card">
+               <div class="card-body">
+
+
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input type="text" id="Nombre" name="Nombre" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido_Paterno" class="form-label">Apellido Paterno</label>
+                        <input type="text" id="Apellido_Paterno" name="Apellido_Paterno"  class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido_Materno" class="form-label">Apellido Materno</label>
+                        <input type="number" id="Apellido_Materno" name="Apellido_Materno"  class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Fecha_Nac" class="form-label">Fecha de nacimiento</label>
+                        <input type="text" id="Fecha_Nac" name="Fecha_Nac" placeholder="Fecha_Nac" class="form-control">
+                    </div>
+                    <button class="btn btn-primary">Registrar</button>
+                </form>
+
+                </div>
+           </div>
+        </div>
+    
+
+
+        <div class="col-md-5">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Apellido Paterno</th>
+                  <th>Apellido Materno</th>
+                  <th>Fecha de nacimiento</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < datos.length; i++){  %>
+                  <tr>
+                    <td><%= i+1  %></td>
+                    <td><%= datos[i].Nombre %></td>
+                    <td><%= datos[i].Apellido_Paterno %></td>
+                    <td><%= datos[i].Apellido_Materno %></td>
+                    <td><%= datos[i].Fecha_Nac %></td>
+                    <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= datos[i]._id %>">
+                                Eliminar
+                            </button>
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal_<%= datos[i]._id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el registro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <a href="/del/<%= datos[i]._id %>" class="btn btn-primary">Eliminar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+ </div>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+ crossorigin="anonymous"></script>
+   
 </body>
 </html>
