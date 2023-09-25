@@ -35,6 +35,8 @@
                         <input type="text" id="Fecha_Nac" name="Fecha_Nac" placeholder="Fecha_Nac" class="form-control">
                     </div>
                     <button class="btn btn-primary">Registrar</button>
+                    
+                    <button class="btn btn-primary">Actualizar</button>
                 </form>
 
                 </div>
@@ -64,13 +66,17 @@
                     <td><%= datos[i].Apellido_Materno %></td>
                     <td><%= datos[i].Fecha_Nac %></td>
                     <td>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= datos[i]._id %>">
+                            <!-- boton eliminar y actualizar  -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalBorrar">
                                 Eliminar
+                            </button>
+
+                            <button type="button" class="btn btn-primary"  >
+                                Actualizar
                             </button>
             
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal_<%= datos[i]._id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="ModalBorrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
