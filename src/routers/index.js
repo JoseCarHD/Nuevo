@@ -24,10 +24,12 @@ router.get('/del/:id', async(req,res)=>{
     res.redirect('/');
 });
 
-router.post('/upd/:id', async(req,res)=>{
-    const {id}= req.params;
-    await Paciente.findByIdAndUpdate(id);
+router.post('/upd/:id', async (req, res) => {
+    const { id } = req.params;
+    const datos = req.body;
+
+    await Paciente.findByIdAndUpdate(id, producto);
     res.redirect('/');
-})
+});
 
 module.exports = router;
