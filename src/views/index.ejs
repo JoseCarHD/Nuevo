@@ -7,6 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <style>
+        body {
+            background-color: #67adf3;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
 <div class="container">
     <!-- comienza form-->
 
@@ -32,11 +54,9 @@
                     </div>
                     <div class="form-group">
                         <label for="Fecha_Nac" class="form-label">Fecha de nacimiento</label>
-                        <input type="text" id="Fecha_Nac" name="Fecha_Nac" placeholder="Fecha_Nac" class="form-control">
+                        <input type="text" id="Fecha_Nac" name="Fecha_Nac"  class="form-control">
                     </div>
                     <button class="btn btn-primary">Registrar</button>
-                    
-                    <button class="btn btn-primary">Actualizar</button>
                 </form>
 
                 </div>
@@ -70,10 +90,6 @@
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalBorrar">
                                 Eliminar
                             </button>
-
-                            <button type="button" class="btn btn-primary"  >
-                                Actualizar
-                            </button>
             
                             <!-- Modal -->
                             <div class="modal fade" id="ModalBorrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,12 +107,13 @@
                                 </div>
                             </div>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal>">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
                                 Actualizar
                             </button>
+                            
 
                             <!-- Modal  de actu-->
-                            <div class="modal fade" id="updateModal>" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
